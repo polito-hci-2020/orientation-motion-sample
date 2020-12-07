@@ -1,29 +1,23 @@
-var ball   = document.querySelector('.ball');
-var garden = document.querySelector('.garden');
-var rot_alpha = document.querySelector('#rot-alpha');
-var rot_beta = document.querySelector('#rot-beta');
-var rot_gamma = document.querySelector('#rot-gamma');
-var mot_x = document.querySelector('#mot-x');
-var mot_y = document.querySelector('#mot-y');
-var mot_z = document.querySelector('#mot-z');
+let ball   = document.querySelector('.ball');
+let garden = document.querySelector('.garden');
+let rot_alpha = document.querySelector('#rot-alpha');
+let rot_beta = document.querySelector('#rot-beta');
+let rot_gamma = document.querySelector('#rot-gamma');
+let mot_x = document.querySelector('#mot-x');
+let mot_y = document.querySelector('#mot-y');
+let mot_z = document.querySelector('#mot-z');
 
-var maxX = garden.clientWidth  - ball.clientWidth;
-var maxY = garden.clientHeight - ball.clientHeight;
+let maxX = garden.clientWidth  - ball.clientWidth;
+let maxY = garden.clientHeight - ball.clientHeight;
 
 window.addEventListener("deviceorientation", handleOrientation);
 
 window.addEventListener("devicemotion", handleMotion);
 
 function handleOrientation(event) {
-    var absolute = event.absolute;
-    var alpha    = event.alpha;
-    var beta     = event.beta;
-    var gamma    = event.gamma;
-
-    // Do stuff with the new orientation data
-    var z = event.alpha;
-    var y = event.beta;  // In degree in the range [-180,180]
-    var x = event.gamma; // In degree in the range [-90,90]
+    let alpha    = event.alpha;
+    let beta     = event.beta;
+    let gamma    = event.gamma;
 
     rot_alpha.innerHTML = alpha + "°";
     rot_beta.innerHTML = beta + "°";
